@@ -1,0 +1,36 @@
+Circuit: * C:\Users\veron\OneDrive - USherbrooke\S4\APP3\S4iAPP3_prob_E20\Premier_essai\nand_test.asc
+
+WARNING: Node X9:N001 is floating.
+WARNING: Node X9:N002 is floating.
+
+WARNING: Less than two connections to node X9:N001.  This node is used by M:X9:3.
+WARNING: Less than two connections to node X9:N002.  This node is used by M:X9:4.
+Direct Newton iteration for .op point succeeded.
+
+t1: time=3.01539e-009 at 3.01539e-009
+t2: time=3.09574e-009 at 3.09574e-009
+t3: time=2.05447e-009 at 2.05447e-009
+t4: time=2.00845e-009 at 2.00845e-009
+transition_up: abs(t2-t1)=8.0353e-011
+transition_down: abs(t4-t3)=4.60206e-011
+
+Measurement "ratio" FAIL'ed
+
+
+Date: Sat Jun 04 16:54:11 2022
+Total elapsed time: 0.215 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2719
+traniter = 2703
+tranpoints = 1288
+accept = 1208
+rejected = 80
+matrix size = 10
+fillins = 2
+solver = Normal
+Matrix Compiler1: 588 bytes object code size  0.2/0.1/[0.1]
+Matrix Compiler2: 940 bytes object code size  0.1/0.3/[0.1]
+

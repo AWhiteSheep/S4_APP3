@@ -1,0 +1,23 @@
+Version 4
+SymbolType BLOCK
+RECTANGLE Normal -48 -88 48 88
+WINDOW 0 0 -88 Bottom 2
+SYMATTR ModelFile mux2x1.asc
+PIN -48 -64 LEFT 8
+PINATTR PinName S
+PINATTR SpiceOrder 1
+PIN 0 -80 NONE 8
+PINATTR PinName Vdd
+PINATTR SpiceOrder 2
+PIN 0 80 NONE 8
+PINATTR PinName Vss
+PINATTR SpiceOrder 3
+PIN -48 32 LEFT 8
+PINATTR PinName X
+PINATTR SpiceOrder 4
+PIN -48 64 LEFT 8
+PINATTR PinName Y
+PINATTR SpiceOrder 5
+PIN 48 0 RIGHT 8
+PINATTR PinName o
+PINATTR SpiceOrder 6
