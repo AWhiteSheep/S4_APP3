@@ -1,4 +1,4 @@
-* C:\Users\veron\OneDrive - USherbrooke\S4\APP3\S4iAPP3_prob_E20\Premier_essai\nand_test.asc
+* C:\Users\veron\OneDrive\Documents\GitHub\S4_APP3\En cours\nand_test.asc
 V1 vdd 0 {vv}
 V2 b 0 PULSE(0 {vv} 1000p 1p 1p 2000p 4000p 5)
 XX9 a out vdd 0 b nand params: NAND ll=180n wn={nnw} wp={nnw*mp}
@@ -17,7 +17,7 @@ M4 vdd in2 Q N002 PMOS l={ll} w={wp} ad={450n*{wp}} as={450n*{wp}} pd={900n+{wp}
 .model NMOS NMOS
 .model PMOS PMOS
 .lib C:\Users\veron\OneDrive\Documents\LTspiceXVII\lib\cmp\standard.mos
-.param vv=1.8 nnw=8*180n mp=1
+.param vv=1.8 nnw=8*180n mp=2
 .lib BU_180nm.lib
 .tran 0 10000p 0 10p
 .meas tran t1 find time when v(out)=vv*0.1 rise 1

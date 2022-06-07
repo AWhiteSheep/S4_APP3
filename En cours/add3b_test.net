@@ -1,0 +1,89 @@
+* C:\Users\veron\OneDrive\Documents\GitHub\S4_APP3\En cours\add3b_test.asc
+XU1 o1 o2 o3 out Bin2Dec Vhigh={vv}
+XU2 b b1 b2 b3 Dec2Bin Vhigh={vv}
+XU3 a a1 a2 a3 Dec2Bin Vhigh={vv}
+V1 vss 0 1.8
+Va a 0 3
+Vb b 0 3
+Vsel sel 0 1.8
+XX1 vss a1 a2 a3 b1 b2 b3 0 o1 o2 o3 cout 0 add3b params: ll=180n wn={nnw} wp={nnw*mp}
+
+* block symbol definitions
+.subckt add3b vdd a1 a2 a3 b1 b2 b3 vss o1 o2 o3 cout cin
+XX1 a1 b1 cin vdd vss N001 o1 add1b params: ll=180n wn={nnw} wp={nnw*mp}
+XX2 a2 b2 N001 vdd vss N002 o2 add1b
+XX3 a3 b3 N002 vdd vss cout o3 add1b
+.ends add3b
+
+.subckt add1b a1 b1 cin Vdd Vss cout o
+XX1 a1 N001 Vdd Vss b1 xor params: XOR ll=180n wn={nnw} wp={nnw*mp}
+XX2 a1 N007 Vdd Vss b1 xor params: XOR ll=180n wn={nnw} wp={nnw*mp}
+XX3 N001 N002 Vdd Vss N006 nand params: NAND ll=180n wn={nnw} wp={nnw*mp}
+XX4 N008 N009 Vdd Vss cin nand params: NAND ll=180n wn={nnw} wp={nnw*mp}
+XX5 N007 N008 Vdd Vss inv params: ll=180n wn={nnw} wp={nnw*mp}
+XX6 N002 N003 Vdd Vss inv params: ll=180n wn={nnw} wp={nnw*mp}
+XX7 N009 N005 Vdd Vss inv params: ll=180n wn={nnw} wp={nnw*mp}
+XX8 N003 N004 Vdd Vss N005 nor params: NOR ll=180n wn={nnw} wp={nnw*mp}
+XX9 N004 o Vdd Vss inv params: ll=180n wn={nnw} wp={nnw*mp}
+XX10 cin N006 Vdd Vss inv params: ll=180n wn={nnw} wp={nnw*mp}
+XX11 a1 N010 Vdd Vss b1 nand params: NAND ll=180n wn={nnw} wp={nnw*mp}
+XX12 cin N016 Vdd Vss b1 nand params: NAND ll=180n wn={nnw} wp={nnw*mp}
+XX13 cin N017 Vdd Vss a1 nand params: NAND ll=180n wn={nnw} wp={nnw*mp}
+XX14 N010 N011 Vdd Vss inv params: ll=180n wn={nnw} wp={nnw*mp}
+XX15 N016 N014 Vdd Vss inv params: ll=180n wn={nnw} wp={nnw*mp}
+XX16 N017 ca Vdd Vss inv params: ll=180n wn={nnw} wp={nnw*mp}
+XX17 N013 N015 Vdd Vss ca nor params: NOR ll=180n wn={nnw} wp={nnw*mp}
+XX18 N011 N012 Vdd Vss N014 nor params: NOR ll=180n wn={nnw} wp={nnw*mp}
+XX19 N012 N013 Vdd Vss inv params: ll=180n wn={nnw} wp={nnw*mp}
+XX20 N015 cout Vdd Vss inv params: ll=180n wn={nnw} wp={nnw*mp}
+.ends add1b
+
+.subckt xor in1 Q vdd vss in2
+M1 vdd in1 N003 vdd PMOS l={ll} w={wp} ad={450n*{wp}} as={450n*{wp}} pd={900n+{wp}} ps={1080n+{wp}}
+M2 N002 in2 Q vdd PMOS l={ll} w={wp} ad={450n*{wp}} as={450n*{wp}} pd={900n+{wp}} ps={1080n+{wp}}
+M7 Q in1 N005 N005 NMOS l={ll} w={wn} ad={450n*{wn}} as={450n*{wn}} pd={900n+{wn}} ps={1080n+{wn}}
+M8 N005 in2 vss vss NMOS l={ll} w={wn} ad={450n*{wn}} as={450n*{wn}} pd={900n+{wn}} ps={1080n+{wn}}
+M5 vdd N001 N002 vdd PMOS l={ll} w={wp} ad={450n*{wp}} as={450n*{wp}} pd={900n+{wp}} ps={1080n+{wp}}
+M6 N003 N004 Q N003 PMOS l={ll} w={wp} ad={450n*{wp}} as={450n*{wp}} pd={900n+{wp}} ps={1080n+{wp}}
+M9 vdd in2 N004 vdd PMOS l={ll} w={wp} ad={450n*{wp}} as={450n*{wp}} pd={900n+{wp}} ps={1080n+{wp}}
+M10 vdd in1 N001 vdd PMOS l={ll} w={wp} ad={450n*{wp}} as={450n*{wp}} pd={900n+{wp}} ps={1080n+{wp}}
+M11 N004 in2 vss vss NMOS l={ll} w={wn} ad={450n*{wn}} as={450n*{wn}} pd={900n+{wn}} ps={1080n+{wn}}
+M12 N001 in1 vss vss NMOS l={ll} w={wn} ad={450n*{wn}} as={450n*{wn}} pd={900n+{wn}} ps={1080n+{wn}}
+M3 Q N001 N006 vss NMOS l={ll} w={wn} ad={450n*{wn}} as={450n*{wn}} pd={900n+{wn}} ps={1080n+{wn}}
+M4 N006 N004 vss vss NMOS l={ll} w={wn} ad={450n*{wn}} as={450n*{wn}} pd={900n+{wn}} ps={1080n+{wn}}
+.lib BU_180nm.lib
+.ends xor
+
+.subckt nand in1 Q vdd vss in2
+M1 Q in1 N003 vss NMOS l={ll} w={wn} ad={450n*{wn}} as={450n*{wn}} pd={900n+{wn}} ps={1080n+{wn}}
+M2 N003 in2 vss vss NMOS l={ll} w={wn} ad={450n*{wn}} as={450n*{wn}} pd={900n+{wn}} ps={1080n+{wn}}
+M3 vdd in1 Q N001 PMOS l={ll} w={wp} ad={450n*{wp}} as={450n*{wp}} pd={900n+{wp}} ps={1080n+{wp}}
+M4 vdd in2 Q N002 PMOS l={ll} w={wp} ad={450n*{wp}} as={450n*{wp}} pd={900n+{wp}} ps={1080n+{wp}}
+.lib BU_180nm.lib
+.ends nand
+
+.subckt inv In _Q vdd vss
+M1 _Q In vss vss NMOS l={ll} w={wn} ad={450n*{wn}} as={450n*{wn}} pd={900n+{wn}} ps={1080n+{wn}}
+M2 vdd In _Q vdd PMOS l={ll} w={wp} ad={450n*{wp}} as={450n*{wp}} pd={900n+{wp}} ps={1080n+{wp}}
+.lib BU_180nm.lib
+.ends inv
+
+.subckt nor in1 Q vdd vss in2
+M1 vdd in1 N002 N001 PMOS l={ll} w={wp} ad={450n*{wp}} as={450n*{wp}} pd={900n+{wp}} ps={1080n+{wp}}
+M2 N002 in2 Q N001 PMOS l={ll} w={wp} ad={450n*{wp}} as={450n*{wp}} pd={900n+{wp}} ps={1080n+{wp}}
+M3 Q in1 vss vss NMOS l={ll} w={wn} ad={450n*{wn}} as={450n*{wn}} pd={900n+{wn}} ps={1080n+{wn}}
+M4 Q in2 vss vss NMOS l={ll} w={wn} ad={450n*{wn}} as={450n*{wn}} pd={900n+{wn}} ps={1080n+{wn}}
+.lib BU_180nm.lib
+.ends nor
+
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Users\veron\OneDrive\Documents\LTspiceXVII\lib\cmp\standard.mos
+.param vv=1.8 nnw=180n mp=1
+.lib BU_180nm.lib
+.op
+.dc va 0 7 1
+.lib Bin2Dec.sub
+.lib Dec2Bin.sub
+.backanno
+.end

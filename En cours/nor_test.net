@@ -1,4 +1,4 @@
-* C:\Users\veron\OneDrive - USherbrooke\S4\APP3\S4iAPP3_prob_E20\Premier_essai\nor_test.asc
+* C:\Users\veron\OneDrive\Documents\GitHub\S4_APP3\En cours\nor_test.asc
 V1 vdd 0 {vv}
 V2 b 0 PULSE(0 {vv} 1000p 1p 1p 2000p 4000p 5)
 V3 a 0 PULSE(0 {vv} 2000p 1p 1p 2000p 4000p 5)
@@ -17,7 +17,7 @@ M4 Q in2 vss vss NMOS l={ll} w={wn} ad={450n*{wn}} as={450n*{wn}} pd={900n+{wn}}
 .model NMOS NMOS
 .model PMOS PMOS
 .lib C:\Users\veron\OneDrive\Documents\LTspiceXVII\lib\cmp\standard.mos
-.param vv=1.8 nnw=1u mp=1
+.param vv=1.8 nnw=2*180n mp=4
 .tran 0 10000p 0 10p
 .lib BU_180nm.lib
 .meas tran t1 find time when v(out)=vv*0.1 rise 1
