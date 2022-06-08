@@ -1,31 +1,31 @@
-Circuit: * C:\Users\Yan\Documents\GitHub\S4_APP3\En cours\xor_test.asc
+Circuit: * C:\Users\veron\OneDrive\Documents\GitHub\S4_APP3\En cours\xor_test.asc
 
 Direct Newton iteration for .op point succeeded.
 
-t1: time=1.00074e-009 at 1.00074e-009
-t2: time=1.18132e-009 at 1.18132e-009
-t3: time=1.00514e-009 at 1.00514e-009
-t4: time=2.01703e-009 at 2.01703e-009
-transition_up: abs(t2-t1)=1.80574e-010
-transition_down: abs(t4-t3)=1.01189e-009
+t1: time=1.00082e-009 at 1.00082e-009
+t2: time=1.19775e-009 at 1.19775e-009
+t3: time=1.00339e-009 at 1.00339e-009
+t4: time=2.01507e-009 at 2.01507e-009
+transition_up: abs(t2-t1)=1.96924e-010
+transition_down: abs(t4-t3)=1.01168e-009
 
 Measurement "ratio" FAIL'ed
 
 
-Date: Tue Jun 07 19:19:38 2022
-Total elapsed time: 0.164 seconds.
+Date: Wed Jun 08 13:37:48 2022
+Total elapsed time: 0.342 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 2789
-traniter = 2761
-tranpoints = 1294
-accept = 1221
-rejected = 73
+totiter = 2678
+traniter = 2647
+tranpoints = 1244
+accept = 1177
+rejected = 67
 matrix size = 13
 fillins = 0
 solver = Normal
-Matrix Compiler1: 960 bytes object code size  0.2/0.1/[0.1]
-Matrix Compiler2: off  [0.1]/0.1/0.1
+Matrix Compiler1: 960 bytes object code size  0.3/0.1/[0.1]
+Matrix Compiler2: 1.36 KB object code size  0.2/0.2/[0.2]
 

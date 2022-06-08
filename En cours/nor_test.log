@@ -2,32 +2,33 @@ Circuit: * C:\Users\veron\OneDrive\Documents\GitHub\S4_APP3\En cours\nor_test.as
 
 WARNING: Node X1:N001 is floating.
 
+WARNING: Less than two connections to node X1:N001.  This node is used by M:X1:1.
 Direct Newton iteration for .op point succeeded.
 
-t1: time=3.02055e-009 at 3.02055e-009
-t2: time=4.08268e-009 at 4.08268e-009
-t3: time=1.07379e-009 at 1.07379e-009
-t4: time=1.01677e-009 at 1.01677e-009
-transition_up: abs(t2-t1)=1.06213e-009
-transition_down: abs(t4-t3)=5.70184e-011
+t1: time=4.0149e-009 at 4.0149e-009
+t2: time=4.09385e-009 at 4.09385e-009
+t3: time=1.1035e-009 at 1.1035e-009
+t4: time=1.02006e-009 at 1.02006e-009
+transition_up: abs(t2-t1)=7.89405e-011
+transition_down: abs(t4-t3)=8.34424e-011
 
 Measurement "ratio" FAIL'ed
 
 
-Date: Tue Jun 07 14:43:28 2022
-Total elapsed time: 0.273 seconds.
+Date: Wed Jun 08 13:26:21 2022
+Total elapsed time: 0.257 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 2789
-traniter = 2771
-tranpoints = 1320
-accept = 1232
-rejected = 88
+totiter = 2662
+traniter = 2646
+tranpoints = 1260
+accept = 1189
+rejected = 71
 matrix size = 9
 fillins = 0
 solver = Normal
-Matrix Compiler1: 448 bytes object code size  0.2/0.1/[0.1]
-Matrix Compiler2: off  [0.1]/0.2/0.1
+Matrix Compiler1: 368 bytes object code size  0.2/0.1/[0.1]
+Matrix Compiler2: 743 bytes object code size  0.1/0.1/[0.1]
 
